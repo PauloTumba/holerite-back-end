@@ -43,11 +43,6 @@ if($geolocalization->id!=null){
     echo json_encode($geolocalizations_arr);
 }
  
-// else{
-//     // set response code - 404 Not found
-//     http_response_code(404);
- 
-//     // tell the user geolocalization does not exist
-//     echo json_encode(array("message" => "geolocalization does not exist."));
-// }
+
+
 ?>
