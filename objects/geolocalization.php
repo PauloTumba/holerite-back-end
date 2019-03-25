@@ -87,6 +87,7 @@ function readOne(){
         // var_dump($tem);    
        
     // query to read single record
+    $outra=md5(uniqid(mt_rand(), true));
     $query = "SELECT id, vc_nome, vc_email, vc_senha, token FROM cofco.login where vc_email=? and vc_senha=?
               ";
  
@@ -105,7 +106,7 @@ function readOne(){
     $this->vc_nome = $row['vc_nome'];
     $this->vc_email = $row['vc_email'];
     $this->vc_senha = $row['vc_senha'];
-    $this->token =$row['token'];
+    $this->token =$outra;
 
    
 
@@ -126,7 +127,7 @@ function readOne(){
     $this->vc_senha=htmlspecialchars(strip_tags($this->vc_senha));
     $this->token=htmlspecialchars(strip_tags($this->token));
 
-    $outra=md5(uniqid(mt_rand(), true));
+    
     // bind new values
     $stmt->bindParam(':vc_nome', $this->vc_nome);
     $stmt->bindParam(':vc_email', $this->vc_email);
